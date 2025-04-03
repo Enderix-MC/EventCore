@@ -52,9 +52,7 @@ public class event implements CommandExecutor {
         return true;
     }
 
-    /**
-     * Zpracuje příkazy pro správu spawnpointů (create, delete).
-     */
+
     private void handleSpawnManagement(Player player, String[] args) {
         if (!player.hasPermission("event.admin")) {
             player.sendMessage(getMessage("no-permissions"));
@@ -92,9 +90,7 @@ public class event implements CommandExecutor {
         }
     }
 
-    /**
-     * Zpracuje příkazy pro aktivaci/deaktivaci eventů (start, stop).
-     */
+
     private void handleEventState(Player player, String[] args) {
         if (!player.hasPermission("event.admin")) {
             player.sendMessage(getMessage("no-permissions"));
@@ -140,9 +136,7 @@ public class event implements CommandExecutor {
         }
     }
 
-    /**
-     * Zpracuje příkaz pro připojení na event (join).
-     */
+
     private void handleJoin(Player player, String[] args) {
         if (args.length != 2) {
             sendUsage(player);
@@ -169,9 +163,7 @@ public class event implements CommandExecutor {
         player.sendMessage(getMessage("event-joined").replace("%event_number%", args[1]));
     }
 
-    /**
-     * Zpracuje příkaz pro vyhození hráče z eventu (kick).
-     */
+
     private void handleKick(Player sender, String[] args) {
         if (!sender.hasPermission("event.admin")) {
             sender.sendMessage(getMessage("no-permissions"));
@@ -196,12 +188,10 @@ public class event implements CommandExecutor {
 
         spawnUtil.teleport(targetPlayer);
         targetPlayer.sendMessage(getMessage("kicked-message"));
-        sender.sendMessage(getMessage("player-kicked").replace("%player_name%", args[1]));
+        sender.sendMessage(getMessage("kick-player-message").replace("%player_name%", args[1]));
     }
 
-    /**
-     * Vrátí instanci EventUtil pro dané číslo eventu.
-     */
+
     private EventUtil getEvent(String eventNumber) {
         try {
             int index = Integer.parseInt(eventNumber) - 1;
@@ -212,16 +202,12 @@ public class event implements CommandExecutor {
         return null;
     }
 
-    /**
-     * Zobrazí hráči nápovědu pro příkaz /event.
-     */
+
     private void sendUsage(Player player) {
         player.sendMessage(getMessage("event-usage"));
     }
 
-    /**
-     * Získá zprávu z konfigurace.
-     */
+
     public String getMessage(String path) {
         if (!configUtil.getFile().exists()) {
             plugin.saveResource("event-config.yml", false);
