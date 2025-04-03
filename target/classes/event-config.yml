@@ -1,0 +1,17 @@
+# Prefix for all messages
+prefix: "&x&a2&b3&c4&d5&b6Enderix | "
+
+# Messages
+messages:
+  ignore: "ignore - dont delete this message!!!!"
+  event-spawn-created: "&aEvent %event_number% created successfully!"
+  event-spawn-deleted: "&cEvent %event_number% deleted successfully!"
+  event-joined: "&eYou have joined event %event_number%."
+  event-does-not-exist: "&cThis event does not exist."
+  wrong-event-number: "&cInvalid event number."
+  no-permissions: "&cYou don't have permission to create events."
+  event-already-exists: "&cThis event already exists."
+  player-kicked: "&eYou have been &cKICKED&e from the event!"
+  kick-player-message: "&aYou have kicked %player_name% from the event."
+  player-not-found: "&cPlayer not found: %player_name%"
+  event-usage: "&7Usage: /event <create|delete|join|start|stop|kick> <event_number>"

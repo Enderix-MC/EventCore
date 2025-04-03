@@ -1,0 +1,25 @@
+name: enderix-event
+version: '1.0-SNAPSHOT'
+main: eu.overhue.event.Core
+api-version: 1.19
+authors: [noxitt]
+website: enderix.eu
+loadbefore: [Multiverse-Core-4.3.1]
+commands:
+  setSpawn:
+    description: Sets the server spawn to players to teleport there
+    usage: /setSpawn
+    permission: spawn.set
+  spawn:
+    description: teleports you to the servers spawn
+    usage: /spawn
+  ohreload:
+    description: reloads the configs of the plugin
+    usage: /ohreload
+    permission: ohlobby.reaload
+    permission-message: &cYou are not allowed to execute this command without zenithialobby.reload permission!
+  vanish:
+    description: sets you invisible to players
+    usage: /vanish
+  event:
+    description: event commands for admins and for players
