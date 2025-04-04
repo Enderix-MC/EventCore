@@ -19,3 +19,5 @@ messages:
   event-not-active: "&cThis event is not active for now!"
   event-already-inactive: "&cThis event is already inactive!"
   event-already-active: "&aThis event is already active!"
+  event-stopped: "&cEvent has been stopped!"
+  event-started: "&aEvent has been started!"
