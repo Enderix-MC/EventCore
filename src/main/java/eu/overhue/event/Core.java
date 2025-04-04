@@ -124,17 +124,17 @@ public final class Core extends JavaPlugin implements Listener {
 
         @Override
         public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-            if (cmd.getName().equalsIgnoreCase("ohreload")) {
+            if (cmd.getName().equalsIgnoreCase("ereload")) {
                 if (sender instanceof Player) {
                     Player player = (Player) sender;
-                    if (!player.hasPermission("ohlobby.reload")) {
+                    if (!player.hasPermission("event.reload")) {
                         player.sendMessage(ChatColor.RED + "You do not have permission to use this command.");
                         return true;
                     }
                 }
 
                 reloadConfig();
-                sender.sendMessage(ChatColor.GREEN + "OHLobby has been reloaded!");
+                sender.sendMessage(ChatColor.GREEN + "Event has been reloaded!");
                 return true;
             }
 
