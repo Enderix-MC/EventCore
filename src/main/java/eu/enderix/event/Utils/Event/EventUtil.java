@@ -52,7 +52,7 @@ public class EventUtil {
      */
     public void teleport(Player player) {
         if (!isActive()) {
-            player.sendMessage("§cTento event není aktivní!");
+            //player.sendMessage("§cTento event není aktivní!");
             return;
         }
 
@@ -60,9 +60,9 @@ public class EventUtil {
         if (loc != null) {
             Bukkit.getLogger().info("[Event] Teleporting player to event " + eventId);
             player.teleport(loc);
-            player.sendMessage("§aByl jsi teleportován na event " + eventId + "!");
+            //player.sendMessage("§aByl jsi teleportován na event " + eventId + "!");
         } else {
-            player.sendMessage("§cEvent nemá nastavený spawn!");
+            //player.sendMessage("§cEvent nemá nastavený spawn!");
         }
     }
 

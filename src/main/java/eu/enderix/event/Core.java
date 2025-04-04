@@ -99,7 +99,7 @@ public final class Core extends JavaPlugin implements Listener {
 
 
     // Optionally, register your event listeners here
-        getCommand("ohreload").setExecutor(new ReloadCommand());
+        getCommand("ereload").setExecutor(new ReloadCommand());
         getCommand("spawn").setExecutor(new Spawn(spawnUtil));
         getCommand("Setspawn").setExecutor(new SetSpawn(spawnUtil));
         getServer().getScheduler().runTaskTimer(this, () -> {
@@ -114,7 +114,7 @@ public final class Core extends JavaPlugin implements Listener {
                 for (Player p : Bukkit.getOnlinePlayers())
                 {
 
-                    p.getWorld().setTime(0L);
+                    //p.getWorld().setTime(0L);
 
                 }
             }
