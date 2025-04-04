@@ -1,6 +1,6 @@
 name: enderix-event
 version: '${project.version}'
-main: eu.overhue.event.Core
+main: eu.enderix.event.Core
 api-version: 1.19
 authors: [noxitt]
 website: enderix.eu
@@ -13,11 +13,11 @@ commands:
   spawn:
     description: teleports you to the servers spawn
     usage: /spawn
-  ohreload:
+  ereload:
     description: reloads the configs of the plugin
-    usage: /ohreload
-    permission: ohlobby.reaload
-    permission-message: &cYou are not allowed to execute this command without zenithialobby.reload permission!
+    usage: /ereload
+    permission: event.reaload
+    permission-message: &cYou are not allowed to execute this command without event.reload permission!
   vanish:
     description: sets you invisible to players
     usage: /vanish
