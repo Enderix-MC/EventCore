@@ -6,6 +6,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class join implements Listener {
 
@@ -26,6 +28,7 @@ public class join implements Listener {
             player.sendMessage("\n");
         }
         player.sendMessage("\n\n\n&f⻬\uF801⻭\uF801".replaceAll("&", "§"));
+        player.removePotionEffect(PotionEffectType.SPEED);
         for(int i=0; i < 5; i++){
             player.sendMessage("\n");
         }
