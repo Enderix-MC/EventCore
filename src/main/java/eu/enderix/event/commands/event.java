@@ -189,7 +189,7 @@ public class event implements CommandExecutor {
         spawnUtil.teleport(targetPlayer);
         targetPlayer.sendMessage(getMessage("kicked-message"));
         sender.sendMessage(getMessage("kick-player-message").replace("%player_name%", args[1]));
-    }
+    } // test
 
 
     private EventUtil getEvent(String eventNumber) {
