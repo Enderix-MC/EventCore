@@ -1,6 +1,8 @@
 eu\enderix\event\Utils\SpawnUtil.class
 eu\enderix\event\commands\event.class
+eu\enderix\event\cheats\antifly.class
 eu\enderix\event\events\join.class
+eu\enderix\event\cheats\antinuke.class
 eu\enderix\event\events\ItemSwitch.class
 eu\enderix\event\events\joinemssage.class
 eu\enderix\event\events\hunger.class
@@ -8,6 +10,8 @@ eu\enderix\event\scoreboard\main.class
 eu\enderix\event\Core$ReloadCommand.class
 eu\enderix\event\commands\SetSpawn.class
 eu\enderix\event\events\item.class
+eu\enderix\event\cheats\antikillaura.class
+eu\enderix\event\cheats\antinofall.class
 eu\enderix\event\events\openmenu.class
 eu\enderix\event\Core.class
 eu\enderix\event\Utils\ConfigUtil.class
@@ -19,3 +23,4 @@ eu\enderix\event\Utils\Event\EventUtil.class
 eu\enderix\event\Core$1.class
 eu\enderix\event\events\drop.class
 eu\enderix\event\events\EntitySpawn.class
+eu\enderix\event\cheats\antireach.class

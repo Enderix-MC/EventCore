@@ -26,7 +26,7 @@ public final class main implements Listener {
 
         FastBoard board = new FastBoard(player);
 
-        board.updateTitle(" §f\uE1B0§r§f\uE1AF§r§f\uE1AE§r§f\uE1AD§r§f\uE1AC§r§f\uE1AB§r§f\uE1AE§r");
+        board.updateTitle("&c".replaceAll("&", "§"));
 
         this.boards.put(player.getUniqueId(), board);
     }

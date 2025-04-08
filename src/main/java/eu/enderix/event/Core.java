@@ -3,13 +3,11 @@ package eu.enderix.event;
 import eu.enderix.event.Utils.ConfigUtil;
 import eu.enderix.event.Utils.Event.EventUtil;
 import eu.enderix.event.Utils.SpawnUtil;
+import eu.enderix.event.cheats.*;
 import eu.enderix.event.events.*;
-import eu.enderix.event.Utils.*;
-import eu.enderix.event.Utils.Event.*;
 import eu.enderix.event.commands.SetSpawn;
 import eu.enderix.event.commands.Spawn;
 import eu.enderix.event.commands.event;
-import eu.enderix.event.events.*;
 import eu.enderix.event.scoreboard.main;
 import fr.mrmicky.fastboard.FastBoard;
 import net.luckperms.api.LuckPerms;
@@ -75,6 +73,11 @@ public final class Core extends JavaPlugin implements Listener {
 
 
         Bukkit.getPluginManager().registerEvents(new main(), this);
+        //Bukkit.getPluginManager().registerEvents(new antifly(), this);
+        //Bukkit.getPluginManager().registerEvents(new antikillaura(), this);
+        //Bukkit.getPluginManager().registerEvents(new antinofall(), this);
+        //Bukkit.getPluginManager().registerEvents(new antireach(), this);
+        //Bukkit.getPluginManager().registerEvents(new antinuke(), this);
         Bukkit.getPluginManager().registerEvents(new damage(), this);
         Bukkit.getPluginManager().registerEvents(new hunger(), this);
         Bukkit.getPluginManager().registerEvents(new damage(), this);
