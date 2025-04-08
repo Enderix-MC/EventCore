@@ -119,7 +119,8 @@ public class event implements CommandExecutor {
                     return;
                 }
                 event.startEvent();
-                player.sendMessage(getMessage("event-started").replace("%event-number%", args[1]));
+                player.sendMessage(getMessage("event-started"));
+                Bukkit.broadcastMessage(getMessage("event-started-broadcast").replace("%event_number%", args[1]));
             }
             case "stop" -> {
                 if (!event.exists()) {
@@ -131,7 +132,8 @@ public class event implements CommandExecutor {
                     return;
                 }
                 event.stopEvent();
-                player.sendMessage(getMessage("event-stopped").replace("%event-number%", args[1]));
+                player.sendMessage(getMessage("event-stopped"));
+                Bukkit.broadcastMessage(getMessage("event-stopped-broadcast").replace("%event_number%", args[1]));
             }
         }
     }
