@@ -6,6 +6,10 @@ import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 public class EventUtil {
 
     private final FileConfiguration config;
@@ -66,9 +70,7 @@ public class EventUtil {
         }
     }
 
-    /**
-     * Aktivuje event, aby se na něj hráči mohli připojovat.
-     */
+
     public void startEvent() {
         if (!exists()) {
             Bukkit.getLogger().warning("[Event] Cannot start event " + eventId + " because it has no spawn!");
@@ -80,19 +82,56 @@ public class EventUtil {
         plugin.saveConfig();
     }
 
-    /**
-     * Deaktivuje event, aby se na něj hráči nemohli připojovat.
-     */
+
     public void stopEvent() {
         Bukkit.getLogger().info("[Event] Stopping event " + eventId);
         config.set("events." + eventId + ".active", false);
         plugin.saveConfig();
     }
 
-    /**
-     * Zkontroluje, zda je event aktivní.
-     */
+
     public boolean isActive() {
         return config.getBoolean("events." + eventId + ".active", false);
     }
+
+public static List<String> getActiveEvents(Core plugin) {
+    List<String> active = new ArrayList<>();
+
+    if (plugin.getConfig().getConfigurationSection("events") == null) {
+        return active;
+    }
+
+    Set<String> keys = plugin.getConfig().getConfigurationSection("events").getKeys(false);
+
+    for (String id : keys) {
+        boolean isActive = plugin.getConfig().getBoolean("events." + id + ".active");
+        if (isActive) {
+            active.add(id);
+        }
+    }
+
+    return active;
+    }
+    public static int getActiveEventCount(Core plugin) {
+        int activeCount = 0;
+
+        // Kontrola, zda sekce "events" existuje v konfiguraci
+        if (plugin.getConfig().getConfigurationSection("events") == null) {
+            return activeCount;  // Pokud není sekce, vrátíme 0
+        }
+
+        // Získáme všechny eventy
+        Set<String> keys = plugin.getConfig().getConfigurationSection("events").getKeys(false);
+
+        // Procházíme všechny eventy a kontrolujeme, zda jsou aktivní
+        for (String id : keys) {
+            boolean isActive = plugin.getConfig().getBoolean("events." + id + ".active");
+            if (isActive) {
+                activeCount++;  // Pokud je event aktivní, zvýšíme počet
+            }
+        }
+
+        return activeCount;
+    }
 }
+

@@ -4,7 +4,6 @@ eu\enderix\event\cheats\antifly.class
 eu\enderix\event\events\join.class
 eu\enderix\event\cheats\antinuke.class
 eu\enderix\event\events\ItemSwitch.class
-eu\enderix\event\events\joinemssage.class
 eu\enderix\event\events\hunger.class
 eu\enderix\event\scoreboard\main.class
 eu\enderix\event\Core$ReloadCommand.class
@@ -18,7 +17,6 @@ eu\enderix\event\Utils\ConfigUtil.class
 eu\enderix\event\events\damage.class
 eu\enderix\event\commands\Spawn.class
 eu\enderix\event\events\watherchange.class
-eu\enderix\event\events\quitmessage.class
 eu\enderix\event\Utils\Event\EventUtil.class
 eu\enderix\event\Core$1.class
 eu\enderix\event\events\drop.class

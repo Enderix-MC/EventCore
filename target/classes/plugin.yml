@@ -4,6 +4,7 @@ main: eu.enderix.event.Core
 api-version: 1.19
 authors: [noxitt]
 website: enderix.eu
+depend: [PlaceholderAPI]
 loadbefore: [Multiverse-Core-4.3.1]
 commands:
   setSpawn:

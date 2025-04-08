@@ -1,33 +1,36 @@
 package eu.enderix.event;
 
-import eu.enderix.event.Utils.ConfigUtil;
+import eu.enderix.event.Utils.*;
 import eu.enderix.event.Utils.Event.EventUtil;
-import eu.enderix.event.Utils.SpawnUtil;
-import eu.enderix.event.cheats.*;
 import eu.enderix.event.events.*;
 import eu.enderix.event.commands.SetSpawn;
 import eu.enderix.event.commands.Spawn;
 import eu.enderix.event.commands.event;
 import eu.enderix.event.scoreboard.main;
 import fr.mrmicky.fastboard.FastBoard;
+import lombok.Getter;
 import net.luckperms.api.LuckPerms;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import me.clip.placeholderapi.PlaceholderAPI;
 import net.luckperms.api.cacheddata.CachedMetaData;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -39,10 +42,6 @@ public final class Core extends JavaPlugin implements Listener {
 
     private LuckPerms luckPerms;
 
-    public static Object getInstance() {
-        return null;
-    }
-
 
     @Override
     public void onLoad(){
@@ -51,6 +50,17 @@ public final class Core extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+
+        // Check if EntitySize plugin is loaded
+        Plugin entitySizePlugin = Bukkit.getPluginManager().getPlugin("EntitySize");
+
+        if (entitySizePlugin == null || !entitySizePlugin.isEnabled()) {
+            getLogger().severe("EntitySize plugin not found or not enabled. Disabling Enderix-Event.");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
+        // Register the ResizeCommand
 
         System.out.println("§aEnderix Event core has been enabled!");
         saveDefaultConfig();
@@ -78,13 +88,11 @@ public final class Core extends JavaPlugin implements Listener {
         //Bukkit.getPluginManager().registerEvents(new antinofall(), this);
         //Bukkit.getPluginManager().registerEvents(new antireach(), this);
         //Bukkit.getPluginManager().registerEvents(new antinuke(), this);
-        Bukkit.getPluginManager().registerEvents(new damage(), this);
-        Bukkit.getPluginManager().registerEvents(new hunger(), this);
-        Bukkit.getPluginManager().registerEvents(new damage(), this);
-        Bukkit.getPluginManager().registerEvents(new EntitySpawn(), this);
-        Bukkit.getPluginManager().registerEvents(new openmenu(), this);
-        Bukkit.getPluginManager().registerEvents(new quitmessage(), this);
-        Bukkit.getPluginManager().registerEvents(new joinemssage(), this);
+        //Bukkit.getPluginManager().registerEvents(new damage(), this);
+        //Bukkit.getPluginManager().registerEvents(new hunger(), this);
+        //Bukkit.getPluginManager().registerEvents(new damage(), this);
+        //Bukkit.getPluginManager().registerEvents(new EntitySpawn(), this);
+        //Bukkit.getPluginManager().registerEvents(new openmenu(), this);
         Bukkit.getPluginManager().registerEvents(new join(spawnUtil), this);
 
         //commands
@@ -124,6 +132,17 @@ public final class Core extends JavaPlugin implements Listener {
         }, 100L, 100L);
 
     }
+    public String getPermission(String permission) {
+        return "EntitySize." + permission;
+    }
+
+
+
+    public @Nullable UUID getPrimaryColor() {
+        final ChatColor primaryColor = ChatColor.LIGHT_PURPLE;
+        return null;
+    }
+
 
     private class ReloadCommand implements CommandExecutor {
 

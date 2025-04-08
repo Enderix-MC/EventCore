@@ -16,7 +16,7 @@ public class hunger implements Listener {
 
         Player player = (Player) event.getEntity();
 
-        if (player.getWorld().getName().equals("world")) {
+        if (player.getWorld().getName().equals("Event01")) {
             event.setCancelled(true);
         }
     }

@@ -22,7 +22,7 @@ public class join implements Listener {
         Player player = event.getPlayer();
         spawnUtil.teleport2(player);
 
-        player.sendTitle("&x&5&9&c&7&e&a&lOverHue.eu".replaceAll("&", "§"), "§fUzij si eventy ;)");
+        player.sendTitle("&x&5&9&c&7&e&a&lEnderix.eu".replaceAll("&", "§"), "§fUzij si eventy ;)");
         player.setGameMode(GameMode.SURVIVAL);
         for(int i=0; i < 200; i++){
             player.sendMessage("\n");

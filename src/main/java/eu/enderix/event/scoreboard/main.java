@@ -26,7 +26,7 @@ public final class main implements Listener {
 
         FastBoard board = new FastBoard(player);
 
-        board.updateTitle("&c".replaceAll("&", "§"));
+        board.updateTitle("&x&D&0&0&8&F&BE&x&C&3&0&7&F&An&x&B&6&0&5&F&8d&x&A&A&0&4&F&7e&x&9&D&0&3&F&6r&x&9&0&0&1&F&4i&x&8&3&0&0&F&3x".replaceAll("&", "§"));
 
         this.boards.put(player.getUniqueId(), board);
     }
@@ -46,13 +46,14 @@ public final class main implements Listener {
 
 
         board.updateLines(
-                "         &8ɴ ᴇ ᴛ ᴡ ᴏ ʀ ᴋ".replaceAll("&", "§"),
+                "".replaceAll("&", "§"),
                 "",
-                "  &x&d&b&c&0&6&4Ξ &x&c&8&d&6&e&5Nick &8| ".replaceAll("&", "§") + PlaceholderAPI.setPlaceholders(board.getPlayer(), "&x&d&b&c&0&6&4%player_name%   ").replaceAll("&", "§"),
-                "  &x&d&b&c&0&6&4Ξ &x&c&8&d&6&e&5Rank &8| ".replaceAll("&", "§") + PlaceholderAPI.setPlaceholders(board.getPlayer(), "&f%luckperms_prefix%").replaceAll("&", "§"),
-                "  &x&d&b&c&0&6&4Ξ &x&c&8&d&6&e&5Ucet &8| &x&d&b&c&0&6&4Developing   ".replaceAll("&", "§"),
+                "  &x&D&0&0&8&F&BΞ &x&c&8&d&6&e&5Nick &8| ".replaceAll("&", "§") + PlaceholderAPI.setPlaceholders(board.getPlayer(), "&x&D&0&0&8&F&B%player_name%   ").replaceAll("&", "§"),
+                "  &x&D&0&0&8&F&BΞ &x&c&8&d&6&e&5Rank &8| ".replaceAll("&", "§") + PlaceholderAPI.setPlaceholders(board.getPlayer(), "&f%luckperms_prefix%").replaceAll("&", "§"),
+                "  &x&D&0&0&8&F&BΞ &x&c&8&d&6&e&5Total &8| ".replaceAll("&", "§") + PlaceholderAPI.setPlaceholders(board.getPlayer(), "&x&D&0&0&8&F&B%bungee_total%").replaceAll("&", "§"),
+                "  &x&D&0&0&8&F&BΞ &x&c&8&d&6&e&5Online &8| ".replaceAll("&", "§") + PlaceholderAPI.setPlaceholders(board.getPlayer(), "&x&D&0&0&8&F&B%server_online%").replaceAll("&", "§"),
                 "",
-                "       &8ᴍᴄ.ᴏᴠᴇʀʜᴜᴇ.ᴇᴜ    ".replaceAll("&","§")
+                "&8mc.enderix.eu    ".replaceAll("&","§")
         );
     }
 }
