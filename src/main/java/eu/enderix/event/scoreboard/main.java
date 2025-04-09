@@ -49,7 +49,7 @@ public final class main implements Listener {
                 "".replaceAll("&", "§"),
                 "",
                 "  &x&D&0&0&8&F&BΞ &x&c&8&d&6&e&5Nick &8| ".replaceAll("&", "§") + PlaceholderAPI.setPlaceholders(board.getPlayer(), "&x&D&0&0&8&F&B%player_name%   ").replaceAll("&", "§"),
-                "  &x&D&0&0&8&F&BΞ &x&c&8&d&6&e&5Rank &8| ".replaceAll("&", "§") + PlaceholderAPI.setPlaceholders(board.getPlayer(), "&f%luckperms_highest_group_by_weight%").replaceAll("&", "§"),
+                "  &x&D&0&0&8&F&BΞ &x&c&8&d&6&e&5Rank &8| ".replaceAll("&", "§") + PlaceholderAPI.setPlaceholders(board.getPlayer(), "&x&D&0&0&8&F&B%luckperms_highest_group_by_weight%").replaceAll("&", "§"),
                 "  &x&D&0&0&8&F&BΞ &x&c&8&d&6&e&5Total &8| ".replaceAll("&", "§") + PlaceholderAPI.setPlaceholders(board.getPlayer(), "&x&D&0&0&8&F&B%bungee_total%").replaceAll("&", "§"),
                 "  &x&D&0&0&8&F&BΞ &x&c&8&d&6&e&5Online &8| ".replaceAll("&", "§") + PlaceholderAPI.setPlaceholders(board.getPlayer(), "&x&D&0&0&8&F&B%server_online%").replaceAll("&", "§"),
                 "",
